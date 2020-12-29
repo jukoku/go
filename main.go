@@ -1,7 +1,11 @@
 package main
 
-import "math"
+import (
+	"fmt"
+)
 
 func main() {
-	math.Phi(0)
+	name := "nico"
+	name = "lynn"
+	fmt.Println(name)
 }
