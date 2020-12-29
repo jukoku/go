@@ -2,16 +2,16 @@ package main
 
 import (
 	"fmt"
-	"strings"
 )
 
-func lenAndUpper(name string) (length int, uppercase string) {
-	length = len(name)
-	uppercase = strings.ToUpper(name)
-	return
+func superAdd(numbers ...int) int {
+	for index, number := range numbers {
+		fmt.Println(index, number)
+	}
+	return 1
+
 }
 
 func main() {
-	totalLenght, up := lenAndUpper("nico")
-	fmt.Println(totalLenght, up)
+	superAdd(1, 2, 3, 4, 5, 6)
 }
