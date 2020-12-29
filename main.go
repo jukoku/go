@@ -2,10 +2,14 @@ package main
 
 import (
 	"fmt"
+	"strings"
 )
 
+func lenAndUpper(name string) (int, string) {
+	return len(name), strings.ToUpper(name)
+}
+
 func main() {
-	name := "nico"
-	name = "lynn"
-	fmt.Println(name)
+	totalLength, upperName := lenAndUpper("nico")
+	fmt.Println(totalLength, upperName)
 }
