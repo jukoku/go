@@ -1,9 +1,7 @@
 package main
 
-import (
-	"fmt"
-)
+import "math"
 
 func main() {
-	fmt.Println("Hello World!!!")
+	math.Phi(0)
 }
