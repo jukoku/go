@@ -1,18 +1,44 @@
 package main
 
 import (
+	"errors"
 	"fmt"
-	"time"
+	"net/http"
 )
 
-func main() {
-	sexyCount("nico")
-	sexyCount("flynn")
+type result struct {
+	url string
+	status string
 }
 
-func sexyCount(person string) {
-	for i := 0; i < 10; i++ {
-		fmt.Println(person, "is sexy", i)
-		time.Sleep(time.Second)
+var errRquestFailed = errors.New("Request Failed")
+
+func main() {	
+	c := make(chan result)
+	urls := []string{
+		"https://www.airbnb.com/",
+		"https://www.google.com/",
+		"https://www.amazon.com/",
+		"https://www.redit.com/",
+		"https://www.google.com/",
+		"https://soundcloud.com/",
+		"https://www.facebook.com/",
+		"https://www.instagram.com/",
+		"https://academy.nomadcoders.co/",
 	}
+
+	for _, url := range urls {
+		go hitURL(url, c)
+	}
+
+func hitURL(url string, c chan<- result){
+	fmt.Println("Checking:", url)
+	resp, err := http.Get(url)
+	status := "OK"
+	if err != nil || resp.StatusCode >= 400 {
+		status := "Failed"
+	} 
+	
+	c <- result{url:url, status: status}
+		
 }
