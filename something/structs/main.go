@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/jukoku/leargo/something/structs/accounts"
+	"github.com/go/something/structs/accounts"
 )
 
 func main() {

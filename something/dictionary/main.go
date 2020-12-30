@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/jukoku/leargo/something/dictionary/mydict"
+	"github.com/go/something/dictionary/mydict"
 )
 
 func main() {
