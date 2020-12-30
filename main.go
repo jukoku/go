@@ -2,18 +2,17 @@ package main
 
 import (
 	"fmt"
+	"time"
 )
 
-func superAdd(numbers ...int) int {
-	total := 0
-	for _, number := range numbers {
-		total += number
-	}
-	return total
-
+func main() {
+	sexyCount("nico")
+	sexyCount("flynn")
 }
 
-func main() {
-	result := superAdd(1, 2, 3, 4, 5, 6)
-	fmt.Println(result)
+func sexyCount(person string) {
+	for i := 0; i < 10; i++ {
+		fmt.Println(person, "is sexy", i)
+		time.Sleep(time.Second)
+	}
 }
